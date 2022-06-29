@@ -1,0 +1,17 @@
+nav {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2vw;
+}
+
+button {
+    background-color: #4762d8;
+    padding: 0 50px;
+  }

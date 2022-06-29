@@ -1,4 +1,21 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+*{
+  box-sizing: border-box;
+  background-color: #1B2240;
+  color: #FFFFFF;
+}
+
+body {
+  width: 60vw;
+  margin: auto;
+  font-family: 'Inter', sans-serif;
+}
+
+
+
+
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +52,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
