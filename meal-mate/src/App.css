@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 *{
   box-sizing: border-box;
-  background-color: #1B2240;
-  color: #FFFFFF;
+  /* background-color: #1B2240;
+  color: #FFFFFF; */
+  background-color: rgb(102, 68, 102);
+  color:white;
+
 }
 
-body {
+.body {
   width: 60vw;
   margin: auto;
   font-family: 'Inter', sans-serif;
