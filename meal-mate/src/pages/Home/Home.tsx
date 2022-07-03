@@ -10,6 +10,7 @@ import {
   ModalBody,
   ModalCloseButton,
   Stack,
+  Image,
 } from "@chakra-ui/react";
 
 export default function Home() {
@@ -89,6 +90,16 @@ export default function Home() {
           <ModalBody>{joke}</ModalBody>
         </ModalContent>
       </Modal>
+
+      <div>
+        <h2>find cuisines from all over the globe</h2>
+        <Image
+          borderRadius="20px"
+          boxSize="150px"
+          src="https://www.eatthis.com/wp-content/uploads/sites/4/2022/02/World-Cuisine.jpg?quality=82&strip=all"
+          alt="recipe image"
+        />
+      </div>
     </div>
   );
 }

@@ -1,13 +1,19 @@
 import "./NavBar.css";
 import { Link } from "react-router-dom";
-import { Button } from "@chakra-ui/react";
+import { Button, Avatar } from "@chakra-ui/react";
 
 export default function NavBar() {
   return (
     <header>
       <nav className="nav-bar">
         <div className="logo-container">
-          <img src="" alt="logo" />
+          <Avatar
+            size="md"
+            // src="https://bit.ly/dan-abramov"
+            src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Foods_-_Idil_Keysan_-_Wikimedia_Giphy_stickers_2019.gif"
+            mb={2}
+            mt={3}
+          />
           <Link to="/" style={{ textDecoration: "none" }}>
             MealMate
           </Link>
@@ -18,7 +24,7 @@ export default function NavBar() {
           <Link to="/cuisine">Cuisine</Link>
           <Link to="/calories">Calories</Link>
           <Link to="/search-by-ingredients">Whats in your Pantry</Link>
-          <Button colorScheme="teal">Find</Button>
+          {/* <Button colorScheme="teal">Find</Button> */}
         </div>
       </nav>
     </header>
