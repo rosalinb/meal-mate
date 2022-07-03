@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import CalorieMealList from './CalorieMealList';
+import MealList from './MealList';
 
 export default function Calories() {
   const [mealData, setMealData] = useState(null);
@@ -13,12 +13,12 @@ export default function Calories() {
 
   function getMealData() {
     fetch(
-      `https://api.spoonacular.com/mealplanner/generate?apiKey=469c4ad6473f4f928a98cb0b760f8eef&timeFrame=day&targetCalories=${calories}`
+      `https://api.spoonacular.com/mealplanner/generate?apiKey=65493f96d9814a4e82ae17cfc6f9fdf5&timeFrame=day&targetCalories=${calories}`
     )
       .then((res) => res.json())
       .then((data) => {
         setMealData(data);
-        console.log(data);
+        // console.log(data);
       })
       .catch(() => {
         console.log("error");
@@ -36,7 +36,7 @@ export default function Calories() {
     </section>
     <button onClick={getMealData}>Get Daily meal plan</button>
 
-    {mealData && <CalorieMealList mealData={mealData} />}
+    {mealData && <MealList mealData={mealData} />}
     
    </div>
   )
