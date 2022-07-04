@@ -3,13 +3,19 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 25px;
+    letter-spacing: 0.5px;
+    background-color: #FFF5F7;
+    padding: 0 8px;
+    position: sticky; 
+    width: 60vw;
 }
 
 .logo-container {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 2vw;
+    gap: 0.5vw;
+    letter-spacing: 1px;
 }
 
 button {
@@ -22,4 +28,22 @@ button {
       justify-content: flex-end;
       gap: 2vw;
       align-items: center;
+      font-size: 13px;
+      font-weight: bold;
+
+
   }
+
+  .other-nav-component .link:hover {
+text-decoration: underline;
+
+  }
+
+  .app-name {
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+
+  }
+
+  

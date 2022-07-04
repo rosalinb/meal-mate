@@ -1,3 +1,114 @@
 .home-page-content {
     margin-top: 50px;
 }
+
+.homepage-container1, .homepage-container2{
+    margin-top: 50px;
+    /* border: 1px solid #521B41; */
+    display: flex;
+    justify-content: space-around;
+    border-radius: 5px;
+    align-items: center;
+    transition: 0.5s;
+    
+
+}
+.homepage-container1{
+  background-color: #FFF5F7;
+}
+
+
+.homepage-container1:hover {
+    -webkit-box-shadow: 4px -1px 20px 0px rgba(82,27,65,0.64);
+    -moz-box-shadow: 4px -1px 20px 0px rgba(82,27,65,0.64);
+    box-shadow: 4px -1px 20px 0px rgba(82,27,65,0.64);
+}
+.homepage-container2:hover {
+  -webkit-box-shadow: 4px -1px 20px 0px rgba(82,27,65,0.64);
+  -moz-box-shadow: 4px -1px 20px 0px rgba(82,27,65,0.64);
+  box-shadow: 4px -1px 20px 0px rgba(82,27,65,0.64);
+}
+
+
+.section-image-box {
+margin:30px;
+}
+
+.section-article-box2 {
+  text-align: left;
+  margin: 20px;
+}
+
+.section-article-box {
+    margin: 30px;
+    /* border: 3px solid purple; */
+
+}
+
+.cuisine-image, .by-ingredient-image {
+width: 600px;
+height: 300px;
+border-radius: 5px;
+}
+
+.calories-image {
+  width: 400px;
+height: 300px;
+  border-radius: 5px;
+}
+
+.by-ingredient-image{
+
+}
+
+
+
+.button {
+    display: inline-block;
+    border-radius: 4px;
+    /* background-color: #E6FFFA; */
+    border: 1px solid teal;
+    color:  #2C7A7B;
+    text-align: center;
+    font-size: 18px;
+    padding: 8px 65px;
+    /* width: 200px; */
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 50px;
+    /* margin-left: 50px; */
+    border-radius: 5px;
+    font-weight: bold;
+   
+
+  }
+  /* .button:hover {
+    background-color: #B2F5EA;
+    color: #319795;
+  }
+   */
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 25px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+
+  }

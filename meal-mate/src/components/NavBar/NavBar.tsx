@@ -14,16 +14,24 @@ export default function NavBar() {
             mb={2}
             mt={3}
           />
-          <Link to="/" style={{ textDecoration: "none" }}>
+          <Link to="/" className="app-name">
             MealMate
           </Link>
         </div>
 
         <div className="other-nav-component">
-          <Link to="/">Home</Link>
-          <Link to="/cuisine">Cuisine</Link>
-          <Link to="/calories">Calories</Link>
-          <Link to="/search-by-ingredients">Whats in your Pantry</Link>
+          <Link className="link" to="/">
+            Home
+          </Link>
+          <Link className="link" to="/cuisine">
+            ByCuisine
+          </Link>
+          <Link className="link" to="/calories">
+            ByCalories
+          </Link>
+          <Link className="link" to="/search-by-ingredients">
+            Whats in your Pantry
+          </Link>
           {/* <Button colorScheme="teal">Find</Button> */}
         </div>
       </nav>

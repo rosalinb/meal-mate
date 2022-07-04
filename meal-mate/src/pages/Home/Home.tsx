@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Home.css";
 import { Heading } from "@chakra-ui/react";
 import {
@@ -10,7 +11,6 @@ import {
   ModalBody,
   ModalCloseButton,
   Stack,
-  Image,
 } from "@chakra-ui/react";
 
 export default function Home() {
@@ -24,9 +24,7 @@ export default function Home() {
 
   function getTrivia() {
     setShowFacts(!showFacts);
-    fetch(
-      `https://api.spoonacular.com/food/trivia/random?apiKey=65493f96d9814a4e82ae17cfc6f9fdf5`
-    )
+    fetch(`https://api.spoonacular.com/food/trivia/random?apiKey=${ApiKey}`)
       .then((response) => response.json())
       .then((data) => {
         setTrivia(data.text);
@@ -39,9 +37,7 @@ export default function Home() {
 
   function getJoke() {
     setShowJokes(!showJokes);
-    fetch(
-      `https://api.spoonacular.com/food/jokes/random?apiKey=65493f96d9814a4e82ae17cfc6f9fdf5`
-    )
+    fetch(`https://api.spoonacular.com/food/jokes/random?apiKey=${ApiKey}`)
       .then((response) => response.json())
       .then((data) => {
         setJoke(data.text);
@@ -91,15 +87,109 @@ export default function Home() {
         </ModalContent>
       </Modal>
 
-      <div>
-        <h2>find cuisines from all over the globe</h2>
+      {/* <h2>find cuisines from all over the globe</h2>
         <Image
           borderRadius="20px"
           boxSize="150px"
-          src="https://www.eatthis.com/wp-content/uploads/sites/4/2022/02/World-Cuisine.jpg?quality=82&strip=all"
+          src="https://familysearch.brightspotcdn.com/dims4/default/055ea1c/2147483647/strip/true/crop/800x500+0+0/resize/1240x775!/quality/90/?url=https%3A%2F%2Ffamilysearch-brightspot.s3.amazonaws.com%2F89%2F3f%2F1a23c4a6fe52a96d2a6d2586cb90%2Fworld-cuisine.jpg"
           alt="recipe image"
-        />
-      </div>
+        /> */}
+      <section className="homepage-container1">
+        <article className="section-article-box">
+          <h4>Everything is good, when it is about Food.</h4>
+          <p>Select your favourite food from our wide range of cuisine. </p>
+          <p>
+            Try it out in your kitchen with the our quick guide of your
+            favourite recipe.
+          </p>
+          <p>
+            Every recipe details comes with stepwise instruction and
+            ingredientlist that helps your to shop your groceries easily.
+          </p>
+
+          <div>
+            <button className="button" style={{ verticalAlign: "middle" }}>
+              <Link to="/cuisine">
+                <span>Search ByCuisine</span>
+              </Link>
+            </button>
+          </div>
+        </article>
+
+        <div className="section-image-box">
+          <img
+            className="cuisine-image"
+            src="https://i.pinimg.com/originals/c6/3f/19/c63f194cb6616f52548ba51a3572515f.gif"
+            alt="recipe image"
+          />
+        </div>
+      </section>
+
+      <section className="homepage-container2">
+        <div className="section-image-box">
+          <img
+            className="calories-image"
+            src="https://www.dish-works.com/wp-content/uploads/Rainbow-Rice-Bowls_GIF-1_toppings-min.gif"
+            alt="recipe image"
+          />
+        </div>
+
+        <article className="section-article-box2">
+          <h4>Count your memories not your calories.</h4>
+          <p>
+            Having said that, we all want to keep a check on out daily calorie
+            intake.
+          </p>
+          <p>
+            Just give us your daily calories intake and we provide you our 3
+            course meal option.
+          </p>
+          <p>Get full recipe details to give them a go.</p>
+
+          <div>
+            <button className="button" style={{ verticalAlign: "middle" }}>
+              <Link className="link" to="/calories">
+                <span>Search ByCalories</span>
+              </Link>
+            </button>
+          </div>
+        </article>
+      </section>
+
+      <section className="homepage-container1">
+        <article className="section-article-box">
+          <h4>From Pantry to Plate</h4>
+
+          <p>
+            Have a look at the ingredients you have and turn them into amazing
+            recipes.
+          </p>
+          <p>
+            We take a mix of your available ingredients and match them with our
+            amazing recipe ideas.
+          </p>
+          <p>
+            Wondering how to prepare! Well check out our details recipe guide.
+          </p>
+          <div>
+            <button className="button" style={{ verticalAlign: "middle" }}>
+              <Link className="link" to="/search-by-ingredients">
+                <span>Search ByIngredient</span>
+              </Link>
+            </button>
+          </div>
+        </article>
+
+        <div className="section-image-box">
+          <img
+            className="by-ingredient-image"
+            // boxSize="300px"
+            // objectFit="cover"
+            src="https://cdn.dribbble.com/users/590596/screenshots/6200385/a--_converted_.gif"
+            alt="recipe image"
+          />
+        </div>
+      </section>
     </div>
   );
 }

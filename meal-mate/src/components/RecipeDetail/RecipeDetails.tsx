@@ -11,9 +11,13 @@ import {
   ModalBody,
   ModalCloseButton,
   Stack,
+  Textarea,
 } from "@chakra-ui/react";
+import "./RecipeDetails.css";
 
 export default function RecipeDetails() {
+  const ApiKey = process.env.REACT_APP_SPOONACULAR_API_KEY;
+
   const [recipeInfo, setRecipeInfo] = useState<any>(null);
   const [showInstruction, setShowInstruction] = useState(false);
   const [showIngredients, setShowIngredients] = useState(false);
@@ -27,7 +31,7 @@ export default function RecipeDetails() {
 
   useEffect(() => {
     fetch(
-      `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=65493f96d9814a4e82ae17cfc6f9fdf5&includeNutrition=false`
+      `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${ApiKey}&includeNutrition=false`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -43,50 +47,55 @@ export default function RecipeDetails() {
   }
   return (
     <>
-      <section
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: 25,
-        }}
+      <main
+
+      // style={{
+      //   display: "grid",
+      //   gridTemplateColumns: "1fr 1fr",
+      //   gap: 25,
+      // }}
       >
-        <div>
-          <Heading mb="10" as="h3" size="sm">
-            {recipeInfo.title}{" "}
-          </Heading>
+        <section className="recipe-detail-cointainer">
+          <div>
+            <h2>{recipeInfo.title}</h2>
 
-          <Image
-            borderRadius="20px"
-            boxSize="300px"
-            src={recipeInfo.image}
-            alt="recipe image"
-          />
+            <Image
+              borderRadius="20px"
+              boxSize="300px"
+              src={recipeInfo.image}
+              alt="recipe image"
+            />
+          </div>
+          <div className="steps-wrapper">
+            <h3>Preparation time: {recipeInfo.readyInMinutes}</h3>
+            <h3>Servings: {recipeInfo.servings}</h3>
+
+            <Stack direction="row" spacing={4} align="center">
+              <Button
+                colorScheme="teal"
+                onClick={showCookingIntructions}
+                variant="outline"
+              >
+                Steps
+              </Button>
+
+              <Button
+                colorScheme="teal"
+                onClick={showCookingIngridents}
+                variant="outline"
+              >
+                Ingredients
+              </Button>
+            </Stack>
+          </div>
           {/* <img src={recipeInfo.image} alt="" /> */}
-        </div>
-        <div>
-          <h3>Preparation time: {recipeInfo.readyInMinutes}</h3>
-          <h4>Summary:</h4>
+        </section>
+
+        <section className="summary-container">
+          <h2>Summary of the recipe: </h2>
           <p dangerouslySetInnerHTML={{ __html: recipeInfo.summary }}></p>
-        </div>
-      </section>
-
-      <Stack direction="row" spacing={4} align="center">
-        <Button
-          colorScheme="teal"
-          onClick={showCookingIntructions}
-          variant="outline"
-        >
-          Steps
-        </Button>
-
-        <Button
-          colorScheme="teal"
-          onClick={showCookingIngridents}
-          variant="outline"
-        >
-          Ingredients
-        </Button>
-      </Stack>
+        </section>
+      </main>
 
       <Modal isOpen={showInstruction} onClose={() => setShowInstruction(false)}>
         <ModalOverlay />

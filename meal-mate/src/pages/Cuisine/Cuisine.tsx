@@ -15,24 +15,25 @@ import {
   Image,
 } from "@chakra-ui/react";
 import { ArrowRightIcon } from "@chakra-ui/icons";
+import "./Cuisine.css";
 
-const CUISINES = [
-  "American",
-  "British",
-  "Chinese",
-  "Eastern European",
-  "French",
-  "Greek",
-  "Indian",
-  "Italian",
-  "Japanese",
-  "Korean",
-  "Mexican",
-  "Middle Eastern",
-  "Spanish",
-  "Thai",
-  "Vietnamese",
-];
+// const CUISINES = [
+//   "American",
+//   "British",
+//   "Chinese",
+//   "Eastern European",
+//   "French",
+//   "Greek",
+//   "Indian",
+//   "Italian",
+//   "Japanese",
+//   "Korean",
+//   "Mexican",
+//   "Middle Eastern",
+//   "Spanish",
+//   "Thai",
+//   "Vietnamese",
+// ];
 
 const CUISINES_ = [
   {
@@ -116,12 +117,13 @@ export default function Cuisine() {
   const resultRef = useRef<any>(null);
   const [cuisineData, setCuisineData] = useState([]);
   const [isFetching, setIsFetching] = useState(false);
-  // const ApiKey = process.env.REACT_APP_SPOONACULAR_API_KEY
+  const ApiKey = process.env.REACT_APP_SPOONACULAR_API_KEY;
+  // console.log(ApiKey);
 
   function getCuisineData(cuisineType: any) {
     setIsFetching(true);
     fetch(
-      `https://api.spoonacular.com/recipes/complexSearch?apiKey=65493f96d9814a4e82ae17cfc6f9fdf5&cuisine=${cuisineType}&instructionsRequired=true`
+      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${ApiKey}&cuisine=${cuisineType}&instructionsRequired=true`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -154,14 +156,7 @@ export default function Cuisine() {
         Cuisine From Around the word
       </Heading>
 
-      <section
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr",
-          gap: 15,
-          marginBottom: 100,
-        }}
-      >
+      <section className="cuisine-container">
         {CUISINES_.map((cuisine) => {
           return (
             <>
@@ -247,16 +242,8 @@ export default function Cuisine() {
           Vietnamese
         </button> */}
       </section>
-
-      <section
-        ref={resultRef}
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr 1fr ",
-          gap: 25,
-          marginBottom: 100,
-        }}
-      >
+      {/* {!isFetching && <h2>Recipes You Can Try!</h2>} */}
+      <section className="recipe-container" ref={resultRef}>
         {/* {isFetching && <h1>Loading</h1>} */}
         {isFetching && (
           <Stack>
@@ -270,46 +257,18 @@ export default function Cuisine() {
           cuisineData.map((item: any) => {
             return (
               <>
-                <WrapItem
-                  key={item.id}
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    border: "1px solid teal",
-                    borderRadius: 5,
-                  }}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Text
-                      color="teal"
-                      fontSize="xs"
-                      fontWeight="semibold"
-                      mb={2}
-                    >
-                      {item.title}
-                    </Text>
-                    <Image
-                      borderRadius="20px"
-                      boxSize="150px"
-                      src={item.image}
-                      alt="recipe image"
-                    />
-                    {/* <Avatar size="lg" src={item.image} mb={2} mt={3} /> */}
-                    <Divider width={50} mb={1}></Divider>
+                <section className="recipe-card" key={item.id}>
+                  <h3> {item.title}</h3>
 
-                    <Link to={`/recipe-details/${item.id}`}>
-                      View Detail Recipe
-                      <ArrowRightIcon mx="2px" />
-                    </Link>
-                  </div>
-                </WrapItem>
+                  <img src={item.image} alt="recipe image" />
+
+                  <Link
+                    className="recipe-link"
+                    to={`/recipe-details/${item.id}`}
+                  >
+                    View Detail Recipe
+                  </Link>
+                </section>
               </>
             );
           })}
