@@ -1,41 +1,19 @@
-import React, { useState, useRef, ReactElement, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import RecipeDetails from "../../components/RecipeDetail/RecipeDetails";
-import { Center, Heading } from "@chakra-ui/react";
+import { Heading } from "@chakra-ui/react";
 import {
   Avatar,
-  AvatarBadge,
-  AvatarGroup,
-  Wrap,
   WrapItem,
   Text,
   Divider,
   Stack,
   Skeleton,
-  Image,
+  HStack,
 } from "@chakra-ui/react";
-import { ArrowRightIcon } from "@chakra-ui/icons";
 import "./Cuisine.css";
+import { isMobile } from "../../config/Breakpoint";
 
-// const CUISINES = [
-//   "American",
-//   "British",
-//   "Chinese",
-//   "Eastern European",
-//   "French",
-//   "Greek",
-//   "Indian",
-//   "Italian",
-//   "Japanese",
-//   "Korean",
-//   "Mexican",
-//   "Middle Eastern",
-//   "Spanish",
-//   "Thai",
-//   "Vietnamese",
-// ];
-
-const CUISINES_ = [
+const CUISINES = [
   {
     name: "American",
     image:
@@ -51,11 +29,7 @@ const CUISINES_ = [
     image:
       "https://images.pexels.com/photos/688803/pexels-photo-688803.jpeg?auto=compress&cs=tinysrgb&w=1600",
   },
-  {
-    name: "Eastern European",
-    image:
-      "https://images.pexels.com/photos/6252725/pexels-photo-6252725.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  },
+
   {
     name: "French",
     image:
@@ -91,11 +65,7 @@ const CUISINES_ = [
     image:
       "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&w=1600",
   },
-  {
-    name: "Middle Eastern",
-    image:
-      "https://images.pexels.com/photos/8286779/pexels-photo-8286779.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  },
+
   {
     name: "Spanish",
     image:
@@ -111,6 +81,16 @@ const CUISINES_ = [
     image:
       "https://images.pexels.com/photos/2059151/pexels-photo-2059151.jpeg?auto=compress&cs=tinysrgb&w=1600",
   },
+  {
+    name: "Eastern European",
+    image:
+      "https://images.pexels.com/photos/6252725/pexels-photo-6252725.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  },
+  {
+    name: "Middle Eastern",
+    image:
+      "https://images.pexels.com/photos/8286779/pexels-photo-8286779.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  },
 ];
 
 export default function Cuisine() {
@@ -118,7 +98,6 @@ export default function Cuisine() {
   const [cuisineData, setCuisineData] = useState([]);
   const [isFetching, setIsFetching] = useState(false);
   const ApiKey = process.env.REACT_APP_SPOONACULAR_API_KEY;
-  // console.log(ApiKey);
 
   function getCuisineData(cuisineType: any) {
     setIsFetching(true);
@@ -129,14 +108,11 @@ export default function Cuisine() {
       .then((data) => {
         setCuisineData(data.results);
         setIsFetching(false);
-
-        // if (resultRef && resultRef.current) {
-        //   resultRef.current.scrollIntoView();
-        // }
       });
   }
 
   function handleCuisineType(event: any) {
+    setCuisineData([]);
     getCuisineData(event.target.alt);
   }
 
@@ -144,8 +120,6 @@ export default function Cuisine() {
     if (resultRef && resultRef.current) {
       resultRef.current.scrollIntoView({
         behavior: "smooth",
-        block: "center",
-        inline: "center",
       });
     }
   }, [cuisineData]);
@@ -157,7 +131,7 @@ export default function Cuisine() {
       </Heading>
 
       <section className="cuisine-container">
-        {CUISINES_.map((cuisine) => {
+        {CUISINES.map((cuisine) => {
           return (
             <>
               <WrapItem
@@ -165,7 +139,7 @@ export default function Cuisine() {
                 style={{
                   display: "flex",
                   justifyContent: "center",
-                  border: "1px solid teal",
+                  border: !isMobile ? "1px solid teal" : "",
                   borderRadius: 5,
                 }}
               >
@@ -182,13 +156,17 @@ export default function Cuisine() {
                   <Avatar
                     size="md"
                     name={cuisine.name}
-                    // src="https://bit.ly/dan-abramov"
                     src={cuisine.image}
                     mb={2}
                     mt={3}
                   />
-                  <Divider width={50} mb={1}></Divider>
-                  <Text color="teal" fontSize="xs" fontWeight="semibold" mb={2}>
+                  {!isMobile && <Divider width={50} mb={1}></Divider>}
+                  <Text
+                    color="teal"
+                    fontSize="xs"
+                    fontWeight={!isMobile ? "semibold" : "normal"}
+                    mb={2}
+                  >
                     {cuisine.name}
                   </Text>
                 </button>
@@ -202,16 +180,17 @@ export default function Cuisine() {
         </button> */}
       </section>
 
-      {/* {!isFetching && <h2>Recipes You Can Try!</h2>} */}
-
       <section className="recipe-container" ref={resultRef}>
-        {/* {isFetching && <h1>Loading</h1>} */}
         {isFetching && (
-          <Stack>
-            <Skeleton height="20px" />
-            <Skeleton height="20px" />
-            <Skeleton height="20px" />
-          </Stack>
+          <>
+            <div>
+              <HStack>
+                <Skeleton height="150px" width={isMobile ? "28vw" : "250px"} />
+                <Skeleton height="150px" width={isMobile ? "28vw" : "250px"} />
+                <Skeleton height="150px" width={isMobile ? "28vw" : "250px"} />
+              </HStack>
+            </div>
+          </>
         )}
 
         {cuisineData &&
@@ -227,23 +206,12 @@ export default function Cuisine() {
                     className="recipe-link"
                     to={`/recipe-details/${item.id}`}
                   >
-                    View Detail Recipe
+                    View Recipe
                   </Link>
                 </section>
               </>
             );
           })}
-
-        {/* {cuisineData &&
-          cuisineData.map((item: any) => {
-            return (
-              <div key={item.id}>
-                <h1>{item.title}</h1>
-                <img src={item.image} alt="" />
-                <Link to={`/recipe-details/${item.id}`}>get recipe</Link>
-              </div>
-            );
-          })} */}
       </section>
     </div>
   );

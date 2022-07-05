@@ -1,6 +1,9 @@
 import "./NavBar.css";
 import { Link } from "react-router-dom";
-import { Button, Avatar } from "@chakra-ui/react";
+import { Avatar } from "@chakra-ui/react";
+import DesktopNav from "./DesktopNav";
+import MobileNav from "./MobileNav";
+import { isMobile } from "../../config/Breakpoint";
 
 export default function NavBar() {
   return (
@@ -18,21 +21,7 @@ export default function NavBar() {
           </Link>
         </div>
 
-        <div className="other-nav-component">
-          <Link className="link" to="/">
-            Home
-          </Link>
-          <Link className="link" to="/cuisine">
-            Cuisine
-          </Link>
-          <Link className="link" to="/calories">
-            Calories
-          </Link>
-          <Link className="link" to="/search-by-ingredients">
-            Whats in your Pantry?
-          </Link>
-          {/* <Button colorScheme="teal">Find</Button> */}
-        </div>
+        {!isMobile ? <DesktopNav></DesktopNav> : <MobileNav></MobileNav>}
       </nav>
     </header>
   );

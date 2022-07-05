@@ -25,8 +25,7 @@ section h2 {
  }
 
  .pantry-search-cointainer {
-    margin: 30px;
-    /* border: 2px solid red; */
+    margin: 20px;
 }
 
  .span {
@@ -40,7 +39,15 @@ section h2 {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 25px;
     margin-bottom: 100px;
+    
 }
+@media only screen and (max-width: 600px) {
+    .pantry-recipe-container  {
+        grid-template-columns: 1fr;
+    }
+  }
+
+
 .pantry-recipe-card {
     padding: 15px;
     transition: 0.5s;
@@ -50,6 +57,8 @@ section h2 {
     justify-content: space-evenly;
     gap: 25px;
     text-align: center;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
 }
 
 .pantry-recipe-card h3 {
@@ -63,19 +72,4 @@ section h2 {
     border-radius: 20%;
 }
 
-.recipe-link {
-    font-family: 'Merriweather', serif;
-    font-size: 14px;
-    color:  #2C7A7B;
 
-}
-.recipe-link:hover {
-    color:  #2C7A7B;
-    text-decoration: underline;
-}
-
-.pantry-recipe-card:hover {
-    -webkit-box-shadow: 4px -1px 20px 0px rgba(82,27,65,0.64);
-    -moz-box-shadow: 4px -1px 20px 0px rgba(82,27,65,0.64);
-    box-shadow: 4px -1px 20px 0px rgba(82,27,65,0.64);
-}

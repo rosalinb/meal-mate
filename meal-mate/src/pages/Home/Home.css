@@ -14,11 +14,14 @@
     align-items: center;
     transition: 0.5s;
     border-radius: 20px;
-    
-
 }
 .homepage-container1{
   background-color: #FFF5F7;
+}
+@media only screen and (max-width: 600px) {
+  .homepage-container1, .homepage-container2{ 
+    flex-direction: column-reverse;
+  }
 }
 
 
@@ -86,27 +89,24 @@ article h4 {
 .button {
     display: inline-block;
     border-radius: 4px;
-    /* background-color: #E6FFFA; */
     border: 1px solid teal;
     color:  #2C7A7B;
     text-align: center;
     font-size: 18px;
     padding: 8px 65px;
-    /* width: 200px; */
     transition: all 0.5s;
     cursor: pointer;
     margin: 50px;
-    /* margin-left: 50px; */
     border-radius: 5px;
     font-weight: bold;
-   
-
   }
-  /* .button:hover {
-    background-color: #B2F5EA;
-    color: #319795;
+  @media only screen and (max-width: 600px) {
+    .button{ 
+      padding: 8px 0px;
+      width: 100%;
+    }
   }
-   */
+ 
   .button span {
     cursor: pointer;
     display: inline-block;

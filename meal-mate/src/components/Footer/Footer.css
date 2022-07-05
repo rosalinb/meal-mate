@@ -7,12 +7,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
- 
-
+}
+@media only screen and (max-width: 768px) {
+    .footer-wrapper {
+        flex-direction: column;
+    }
 }
 
 .social-media-container,  .footer-info {
-
     padding: 30px;
     font-size: 13px;
 }
@@ -21,7 +23,6 @@ span {
     color: #38B2AC;
 }
 
-
 .footer-info h6, .social-media-container h3 {
     color: #38B2AC;
     font-family: 'Inter', sans-serif;
@@ -29,7 +30,6 @@ span {
     letter-spacing: 0.5px;
     font-size: 14px;
     margin-bottom: 10px;
-
 }
 
 .footer-wrapper p {
