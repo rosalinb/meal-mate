@@ -40,7 +40,8 @@ export default function Calories() {
         </section>
         <section>
           <img
-            src="https://c.tenor.com/ihPi3OW8myEAAAAC/low-calorie-food-market.gif"
+            // src="https://c.tenor.com/ihPi3OW8myEAAAAC/low-calorie-food-market.gif"
+            src=""
             alt=""
           />
         </section>
@@ -57,6 +58,7 @@ export default function Calories() {
           onChange={handleChange}
         />
         <Button
+          className="button"
           rightIcon={<Search2Icon />}
           colorScheme="teal"
           variant="outline"

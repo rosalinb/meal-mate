@@ -1,9 +1,12 @@
-<h1>Meal Mate</h1>
+<h1>MealMate</h1>
 <h2>What is this application about?</h2>
 <p>We all like to eat new cusine and finding various recipes that we can make with available ingredients is a real joy!</p>
 <p>
-  "Meal Mate" is a one stop pal that helps you to shortlist recipes as per your need.
+  "MealMate" is a one stop pal that helps you to shortlist recipes as per your need.
 </p>
+
+<h2>Plan your today's meal with MealMate</h2>
+  <a href="https://meal-mate.surge.sh/"></a>
 
 <h2>Key Freatues:</h2>
 <ul>
@@ -32,7 +35,7 @@
 </ul>
 
 <h2>
-  New Skills Learned & Challenges faced:
+  New Skills Learned & Challenges faced:</h2>
   <ul>
     <li>Reading and understanding the Spoonacular API</li>
     <li>React Hooks and better use of props and state.</li>
@@ -40,4 +43,3 @@
     <li>Understanding and implemating Chakra UI</li>
 
   </ul>
-</h2>

@@ -38,73 +38,73 @@ import "./Cuisine.css";
 const CUISINES_ = [
   {
     name: "American",
-    image:
-      "https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    // image:
+    //   "https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?auto=compress&cs=tinysrgb&w=1600",
   },
   {
     name: "British",
-    image:
-      "https://images.unsplash.com/photo-1606946144557-0d04974df266?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8YnJpdGlzaCUyMGZvb2R8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
+    // image:
+    //   "https://images.unsplash.com/photo-1606946144557-0d04974df266?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8YnJpdGlzaCUyMGZvb2R8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
   },
   {
     name: "Chinese",
-    image:
-      "https://images.pexels.com/photos/688803/pexels-photo-688803.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    // image:
+    //   "https://images.pexels.com/photos/688803/pexels-photo-688803.jpeg?auto=compress&cs=tinysrgb&w=1600",
   },
   {
     name: "Eastern European",
-    image:
-      "https://images.pexels.com/photos/6252725/pexels-photo-6252725.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    // image:
+    //   "https://images.pexels.com/photos/6252725/pexels-photo-6252725.jpeg?auto=compress&cs=tinysrgb&w=1600",
   },
   {
     name: "French",
-    image:
-      "https://images.pexels.com/photos/821365/pexels-photo-821365.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    // image:
+    //   "https://images.pexels.com/photos/821365/pexels-photo-821365.jpeg?auto=compress&cs=tinysrgb&w=1600",
   },
   {
     name: "Greek",
-    image:
-      "https://images.pexels.com/photos/709823/pexels-photo-709823.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    // image:
+    //   "https://images.pexels.com/photos/709823/pexels-photo-709823.jpeg?auto=compress&cs=tinysrgb&w=1600",
   },
   {
     name: "Indian",
-    image:
-      "https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmlyeWFuaXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
+    // image:
+    //   "https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmlyeWFuaXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
   },
   {
     name: "Italian",
-    image:
-      "https://images.pexels.com/photos/769969/pexels-photo-769969.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    // image:
+    //   "https://images.pexels.com/photos/769969/pexels-photo-769969.jpeg?auto=compress&cs=tinysrgb&w=1600",
   },
   {
     name: "Korean",
-    image:
-      "https://images.pexels.com/photos/2313686/pexels-photo-2313686.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    // image:
+    //   "https://images.pexels.com/photos/2313686/pexels-photo-2313686.jpeg?auto=compress&cs=tinysrgb&w=1600",
   },
   {
     name: "Japanese",
-    image:
-      "https://images.pexels.com/photos/248444/pexels-photo-248444.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    // image:
+    //   "https://images.pexels.com/photos/248444/pexels-photo-248444.jpeg?auto=compress&cs=tinysrgb&w=1600",
   },
   {
     name: "Mexican",
-    image:
-      "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    // image:
+    //   "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&w=1600",
   },
   {
     name: "Middle Eastern",
-    image:
-      "https://images.pexels.com/photos/8286779/pexels-photo-8286779.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    // image:
+    //   "https://images.pexels.com/photos/8286779/pexels-photo-8286779.jpeg?auto=compress&cs=tinysrgb&w=1600",
   },
   {
     name: "Spanish",
-    image:
-      "https://images.pexels.com/photos/4765652/pexels-photo-4765652.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    // image:
+    //   "https://images.pexels.com/photos/4765652/pexels-photo-4765652.jpeg?auto=compress&cs=tinysrgb&w=1600",
   },
   {
     name: "Thai",
-    image:
-      "https://images.pexels.com/photos/699953/pexels-photo-699953.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    // image:
+    //   "https://images.pexels.com/photos/699953/pexels-photo-699953.jpeg?auto=compress&cs=tinysrgb&w=1600",
   },
   {
     name: "Vietnamese",
@@ -196,53 +196,14 @@ export default function Cuisine() {
             </>
           );
         })}
+
         {/* <button disabled={isFetching} onClick={handleCuisineType}>
           American
-        </button>
-        <button disabled={isFetching} onClick={handleCuisineType}>
-          British
-        </button>
-        <button disabled={isFetching} onClick={handleCuisineType}>
-          Chinese
-        </button>
-        <button disabled={isFetching} onClick={handleCuisineType}>
-          Eastern European
-        </button>
-        <button disabled={isFetching} onClick={handleCuisineType}>
-          French
-        </button>
-        <button disabled={isFetching} onClick={handleCuisineType}>
-          Greek
-        </button>
-        <button disabled={isFetching} onClick={handleCuisineType}>
-          Indian
-        </button>
-        <button disabled={isFetching} onClick={handleCuisineType}>
-          Italian
-        </button>
-        <button disabled={isFetching} onClick={handleCuisineType}>
-          Japanese
-        </button>
-        <button disabled={isFetching} onClick={handleCuisineType}>
-          Korean
-        </button>
-        <button disabled={isFetching} onClick={handleCuisineType}>
-          Mexican
-        </button>
-        <button disabled={isFetching} onClick={handleCuisineType}>
-          Middle Eastern
-        </button>
-        <button disabled={isFetching} onClick={handleCuisineType}>
-          Spanish
-        </button>
-        <button disabled={isFetching} onClick={handleCuisineType}>
-          Thai
-        </button>
-        <button disabled={isFetching} onClick={handleCuisineType}>
-          Vietnamese
         </button> */}
       </section>
+
       {/* {!isFetching && <h2>Recipes You Can Try!</h2>} */}
+
       <section className="recipe-container" ref={resultRef}>
         {/* {isFetching && <h1>Loading</h1>} */}
         {isFetching && (

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Input, Button } from "@chakra-ui/react";
 import { Search2Icon } from "@chakra-ui/icons";
 import "./FindByIngredient.css";
-import { FaBeer } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa";
 
 // interface IngredientProps {
 //     recipeIdeas: [];
@@ -44,7 +44,8 @@ export default function FindByIngredient() {
           </section>
 
           <section>
-            <img src="https://i.gifer.com/Zei9.gif" alt="recipe image" />
+            {/* <img src="https://i.gifer.com/Zei9.gif" alt="recipe image" /> */}
+            <img src="" alt="recipe image" />
           </section>
         </article>
 
@@ -84,6 +85,7 @@ export default function FindByIngredient() {
           return (
             <>
               <section
+                key={recipe.id}
                 className="pantry-recipe-card"
                 // style={{
                 //   display: "flex",
@@ -92,12 +94,13 @@ export default function FindByIngredient() {
                 //   borderRadius: 5,
                 // }}
               >
-                <div key={recipe.id}>
+                <div>
                   <h3>{recipe.title}</h3>
-
                   <img src={recipe.image} alt="recipe image" />
-                  <FaBeer />
-                  <p>likes: {recipe.likes}</p>
+
+                  {recipe.likes}
+                  <FaHeart style={{ color: "red" }} />
+
                   {/* <p><RecipeDetailsByIngredient mealId={recipe.id}/></p> */}
                   <Link
                     className="recipe-link"

@@ -46,8 +46,8 @@ export default function Home() {
   }
 
   return (
-    <div>
-      <div className="home-page-content">
+    <main>
+      <section className="home-page-content">
         <Heading mb="5" as="h1">
           Find you perfect meal <br></br> with MealMate
         </Heading>
@@ -64,7 +64,7 @@ export default function Home() {
             Food Joke
           </Button>
         </Stack>
-      </div>
+      </section>
 
       {/* {showFacts && <p>{trivia}</p>} */}
       {/* {showJokes && <p>{joke}</p>} */}
@@ -87,13 +87,6 @@ export default function Home() {
         </ModalContent>
       </Modal>
 
-      {/* <h2>find cuisines from all over the globe</h2>
-        <Image
-          borderRadius="20px"
-          boxSize="150px"
-          src="https://familysearch.brightspotcdn.com/dims4/default/055ea1c/2147483647/strip/true/crop/800x500+0+0/resize/1240x775!/quality/90/?url=https%3A%2F%2Ffamilysearch-brightspot.s3.amazonaws.com%2F89%2F3f%2F1a23c4a6fe52a96d2a6d2586cb90%2Fworld-cuisine.jpg"
-          alt="recipe image"
-        /> */}
       <section className="homepage-container1">
         <article className="section-article-box">
           <h4>Everything is good, when it is about Food.</h4>
@@ -117,25 +110,17 @@ export default function Home() {
         </article>
 
         <div className="section-image-box">
-          <img
-            className="cuisine-image"
-            src="https://i.pinimg.com/originals/c6/3f/19/c63f194cb6616f52548ba51a3572515f.gif"
-            alt="recipe image"
-          />
+          <img className="cuisine-image" src="" alt="cuisine recipe image" />
         </div>
       </section>
 
       <section className="homepage-container2">
         <div className="section-image-box">
-          <img
-            className="calories-image"
-            src="https://www.dish-works.com/wp-content/uploads/Rainbow-Rice-Bowls_GIF-1_toppings-min.gif"
-            alt="recipe image"
-          />
+          <img className="calories-image" src="" alt="calories  image" />
         </div>
 
         <article className="section-article-box2">
-          <h4>Count your memories not your calories.</h4>
+          <h4>Count your memories not your calories!</h4>
           <p>
             Having said that, we all want to keep a check on out daily calorie
             intake.
@@ -185,11 +170,11 @@ export default function Home() {
             className="by-ingredient-image"
             // boxSize="300px"
             // objectFit="cover"
-            src="https://cdn.dribbble.com/users/590596/screenshots/6200385/a--_converted_.gif"
-            alt="recipe image"
+            src=""
+            alt="grocery image"
           />
         </div>
       </section>
-    </div>
+    </main>
   );
 }

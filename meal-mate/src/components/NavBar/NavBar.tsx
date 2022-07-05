@@ -10,7 +10,7 @@ export default function NavBar() {
           <Avatar
             size="md"
             // src="https://bit.ly/dan-abramov"
-            src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Foods_-_Idil_Keysan_-_Wikimedia_Giphy_stickers_2019.gif"
+            src=""
             mb={2}
             mt={3}
           />

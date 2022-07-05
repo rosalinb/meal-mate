@@ -25,10 +25,22 @@ section img {
     width: 300px;
 }
 
-.calories-search-cointainer {
+.calories-search-cointainer{
     margin: 30px;
     /* border: 2px solid red; */
 }
+
+
+.calories-search-cointainer h3{
+    margin: 40px 0;
+   
+}
+
+.button {
+  margin:  0;
+}
+
+
 
 /* CSS FOR MEAL LIST COMPONENT */
 
