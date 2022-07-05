@@ -127,7 +127,7 @@ export default function Cuisine() {
   return (
     <div>
       <Heading mb="5" as="h1" size="lg">
-        Cuisine From Around the word
+        Cuisines From Around the word
       </Heading>
 
       <section className="cuisine-container">
