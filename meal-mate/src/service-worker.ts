@@ -78,3 +78,20 @@ self.addEventListener('message', (event) => {
 });
 
 // Any other custom service worker logic can go here.
+
+self.addEventListener("fetch", function (event) {
+  console.log('fetch cache');
+  event.respondWith(
+    caches.open("your-app").then(function (cache) {
+      return cache.match(event.request).then(function (response) {
+        return (
+          response ||
+          fetch(event.request).then(function (response) {
+            cache.put(event.request, response.clone());
+            return response;
+          })
+        );
+      });
+    })
+  );
+}); 
