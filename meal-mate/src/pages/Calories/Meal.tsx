@@ -38,7 +38,7 @@ export default function Meal({ meal }: MealProps) {
         <li>Number Of Servings: {meal.servings}</li>
       </ul>
 
-      <a className="recipe-link" href={meal.sourceUrl}>
+      <a className="recipe-link" href={meal.sourceUrl} target="blank">
         View Full Recipe
       </a>
     </article>

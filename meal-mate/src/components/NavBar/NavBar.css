@@ -4,10 +4,16 @@
     align-items: center;
     margin-top: 25px;
     letter-spacing: 0.5px;
-    background-color: #FFF5F7;
-    padding: 0 8px;
+    /* background-color: #FFF5F7; */
+    padding: 8px 8px;
     position: sticky; 
     width: 60vw;
+    margin: auto;
+}
+@media only screen and (max-width: 600px) {
+  .nav-bar {
+    width: 92vw;
+  }
 }
 
 .logo-container {

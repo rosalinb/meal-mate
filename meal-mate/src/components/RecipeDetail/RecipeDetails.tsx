@@ -43,18 +43,12 @@ export default function RecipeDetails() {
   let { recipeId } = useParams();
 
   if (!recipeInfo) {
-    return <h1>Loading</h1>;
+    return <h1>Loading...</h1>;
   }
+
   return (
     <>
-      <main
-
-      // style={{
-      //   display: "grid",
-      //   gridTemplateColumns: "1fr 1fr",
-      //   gap: 25,
-      // }}
-      >
+      <main>
         <section className="recipe-detail-cointainer">
           <div>
             <h2>{recipeInfo.title}</h2>

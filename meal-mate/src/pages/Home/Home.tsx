@@ -12,7 +12,6 @@ import {
   ModalCloseButton,
   Stack,
 } from "@chakra-ui/react";
-// import Footer from "../../components/Footer/Footer";
 
 export default function Home() {
   const [trivia, setTrivia] = useState("");
@@ -21,7 +20,6 @@ export default function Home() {
   const [showJokes, setShowJokes] = useState(false);
 
   const ApiKey = process.env.REACT_APP_SPOONACULAR_API_KEY;
-  // console.log(process)
 
   function getTrivia() {
     setShowFacts(!showFacts);
@@ -42,7 +40,6 @@ export default function Home() {
       .then((response) => response.json())
       .then((data) => {
         setJoke(data.text);
-        // console.log(data)
       });
   }
 
@@ -66,9 +63,6 @@ export default function Home() {
           </Button>
         </Stack>
       </section>
-
-      {/* {showFacts && <p>{trivia}</p>} */}
-      {/* {showJokes && <p>{joke}</p>} */}
 
       <Modal isOpen={showFacts} onClose={() => setShowFacts(false)}>
         <ModalOverlay />
@@ -168,7 +162,7 @@ export default function Home() {
           <div>
             <button className="button" style={{ verticalAlign: "middle" }}>
               <Link className="link" to="/search-by-ingredients">
-                <span>Search ByIngredient</span>
+                <span>Search By Ingredient</span>
               </Link>
             </button>
           </div>

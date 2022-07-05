@@ -5,11 +5,6 @@ import { Search2Icon } from "@chakra-ui/icons";
 import "./FindByIngredient.css";
 import { FaHeart } from "react-icons/fa";
 
-// interface IngredientProps {
-//     recipeIdeas: [];
-
-// }
-
 export default function FindByIngredient() {
   const ApiKey = process.env.REACT_APP_SPOONACULAR_API_KEY;
 
@@ -58,6 +53,7 @@ export default function FindByIngredient() {
             variant="flushed"
             placeholder="Enter items separated by comma"
             onChange={handleChange}
+            mt="30px"
           />
           <Button
             rightIcon={<Search2Icon />}
@@ -71,44 +67,26 @@ export default function FindByIngredient() {
         </section>
       </main>
 
-      {/* <input
-          type="text"
-          placeholder="enter ingrediants"
-          onChange={handleChange}
-        /> */}
-
-      {/* <button onClick={searchRecipesByIngrediants}>Search</button> */}
-
       <section className="pantry-recipe-container">
         {recipeIdeas.map((recipe: any) => {
           return (
             <>
-              <section
-                key={recipe.id}
-                className="pantry-recipe-card"
-                // style={{
-                //   display: "flex",
-                //   justifyContent: "center",
-                //   border: "1px solid teal",
-                //   borderRadius: 5,
-                // }}
-              >
-                <div>
-                  <h3>{recipe.title}</h3>
-                  <img src={recipe.image} alt="recipe image" />
+              <section key={recipe.id} className="pantry-recipe-card">
+                {/* <div> */}
+                <h3>{recipe.title}</h3>
+                <img src={recipe.image} alt="recipe image" />
 
-                  {recipe.likes}
-                  <FaHeart style={{ color: "red" }} />
+                {/* {recipe.likes} */}
+                {/* <FaHeart style={{ color: "red" }} /> */}
 
-                  {/* <p><RecipeDetailsByIngredient mealId={recipe.id}/></p> */}
-                  <Link
-                    className="recipe-link"
-                    to={`/recipe-details/${recipe.id}`}
-                  >
-                    View Detail Recipe
-                    {/* <ArrowRightIcon mx="2px" /> */}
-                  </Link>
-                </div>
+                <Link
+                  className="recipe-link"
+                  to={`/recipe-details/${recipe.id}`}
+                  style={{ marginTop: 10, display: "inline-block" }}
+                >
+                  View Recipe
+                </Link>
+                {/* </div> */}
               </section>
             </>
           );
