@@ -12,6 +12,7 @@ import {
   ModalCloseButton,
   Stack,
 } from "@chakra-ui/react";
+// import Footer from "../../components/Footer/Footer";
 
 export default function Home() {
   const [trivia, setTrivia] = useState("");
@@ -103,20 +104,28 @@ export default function Home() {
           <div>
             <button className="button" style={{ verticalAlign: "middle" }}>
               <Link to="/cuisine">
-                <span>Search ByCuisine</span>
+                <span>Search By Cuisine</span>
               </Link>
             </button>
           </div>
         </article>
 
         <div className="section-image-box">
-          <img className="cuisine-image" src="" alt="cuisine recipe image" />
+          <img
+            className="cuisine-image"
+            src="https://i.pinimg.com/originals/c6/3f/19/c63f194cb6616f52548ba51a3572515f.gif"
+            alt="cuisine recipe image"
+          />
         </div>
       </section>
 
       <section className="homepage-container2">
         <div className="section-image-box">
-          <img className="calories-image" src="" alt="calories  image" />
+          <img
+            className="calories-image"
+            src="https://www.dish-works.com/wp-content/uploads/Rainbow-Rice-Bowls_GIF-1_toppings-min.gif"
+            alt="calories image"
+          />
         </div>
 
         <article className="section-article-box2">
@@ -134,7 +143,7 @@ export default function Home() {
           <div>
             <button className="button" style={{ verticalAlign: "middle" }}>
               <Link className="link" to="/calories">
-                <span>Search ByCalories</span>
+                <span>Search By Calories</span>
               </Link>
             </button>
           </div>
@@ -168,12 +177,37 @@ export default function Home() {
         <div className="section-image-box">
           <img
             className="by-ingredient-image"
-            // boxSize="300px"
-            // objectFit="cover"
-            src=""
+            src="https://cdn.dribbble.com/users/590596/screenshots/6200385/a--_converted_.gif"
             alt="grocery image"
           />
         </div>
+      </section>
+
+      <section className="homepage-container2">
+        <div className="section-image-box">
+          <img
+            className="joke-image"
+            src="https://www.rd.com/wp-content/uploads/2020/04/Pizzapuns32-1-scaled.jpg"
+            alt="calories image"
+          />
+        </div>
+
+        <article className="section-article-box2">
+          <h4>Food is not always about Cooking!</h4>
+          <p>Its fun know some facts about food. Have a trivia time.</p>
+          <p>Share a laugh with fun joke realted to food and dining.</p>
+          <p>Get full recipe details to give them a go.</p>
+
+          <div style={{ display: "flex", gap: "5px" }}>
+            <Button colorScheme="teal" onClick={getTrivia} variant="outline">
+              Food Trivia
+            </Button>
+
+            <Button colorScheme="teal" onClick={getJoke} variant="outline">
+              Food Joke
+            </Button>
+          </div>
+        </article>
       </section>
     </main>
   );

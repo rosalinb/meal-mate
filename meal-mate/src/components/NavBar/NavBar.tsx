@@ -9,8 +9,7 @@ export default function NavBar() {
         <div className="logo-container">
           <Avatar
             size="md"
-            // src="https://bit.ly/dan-abramov"
-            src=""
+            src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Foods_-_Idil_Keysan_-_Wikimedia_Giphy_stickers_2019.gif"
             mb={2}
             mt={3}
           />
@@ -24,13 +23,13 @@ export default function NavBar() {
             Home
           </Link>
           <Link className="link" to="/cuisine">
-            ByCuisine
+            Cuisine
           </Link>
           <Link className="link" to="/calories">
-            ByCalories
+            Calories
           </Link>
           <Link className="link" to="/search-by-ingredients">
-            Whats in your Pantry
+            Whats in your Pantry?
           </Link>
           {/* <Button colorScheme="teal">Find</Button> */}
         </div>

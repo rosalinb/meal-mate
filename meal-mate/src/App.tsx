@@ -2,12 +2,12 @@ import React from "react";
 import "./App.css";
 import Home from "./pages/Home/Home";
 import NavBar from "./components/NavBar/NavBar";
-
 import { Routes, Route, Link } from "react-router-dom";
 import Cuisine from "./pages/Cuisine/Cuisine";
 import Calories from "./pages/Calories/Calories";
 import RecipeDetails from "./components/RecipeDetail/RecipeDetails";
 import FindByIngredient from "./pages/FindByIngredient/FindByIngredient";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -25,6 +25,10 @@ function App() {
           <Route path="/search-by-ingredients" element={<FindByIngredient />} />
         </Routes>
       </div>
+
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }
