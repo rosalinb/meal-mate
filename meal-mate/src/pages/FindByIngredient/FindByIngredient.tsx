@@ -44,8 +44,7 @@ export default function FindByIngredient() {
           </section>
 
           <section>
-            {/* <img src="https://i.gifer.com/Zei9.gif" alt="recipe image" /> */}
-            <img src="" alt="recipe image" />
+            <img src="https://i.gifer.com/Zei9.gif" alt="recipe image" />
           </section>
         </article>
 

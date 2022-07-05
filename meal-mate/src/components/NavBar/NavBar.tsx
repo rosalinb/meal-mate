@@ -9,8 +9,7 @@ export default function NavBar() {
         <div className="logo-container">
           <Avatar
             size="md"
-            // src="https://bit.ly/dan-abramov"
-            src=""
+            src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Foods_-_Idil_Keysan_-_Wikimedia_Giphy_stickers_2019.gif"
             mb={2}
             mt={3}
           />

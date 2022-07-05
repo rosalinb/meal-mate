@@ -40,8 +40,7 @@ export default function Calories() {
         </section>
         <section>
           <img
-            // src="https://c.tenor.com/ihPi3OW8myEAAAAC/low-calorie-food-market.gif"
-            src=""
+            src="https://c.tenor.com/ihPi3OW8myEAAAAC/low-calorie-food-market.gif"
             alt=""
           />
         </section>

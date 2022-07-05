@@ -110,13 +110,21 @@ export default function Home() {
         </article>
 
         <div className="section-image-box">
-          <img className="cuisine-image" src="" alt="cuisine recipe image" />
+          <img
+            className="cuisine-image"
+            src="https://i.pinimg.com/originals/c6/3f/19/c63f194cb6616f52548ba51a3572515f.gif"
+            alt="cuisine recipe image"
+          />
         </div>
       </section>
 
       <section className="homepage-container2">
         <div className="section-image-box">
-          <img className="calories-image" src="" alt="calories  image" />
+          <img
+            className="calories-image"
+            src="https://www.dish-works.com/wp-content/uploads/Rainbow-Rice-Bowls_GIF-1_toppings-min.gif"
+            alt="calories image"
+          />
         </div>
 
         <article className="section-article-box2">
@@ -168,9 +176,7 @@ export default function Home() {
         <div className="section-image-box">
           <img
             className="by-ingredient-image"
-            // boxSize="300px"
-            // objectFit="cover"
-            src=""
+            src="https://cdn.dribbble.com/users/590596/screenshots/6200385/a--_converted_.gif"
             alt="grocery image"
           />
         </div>

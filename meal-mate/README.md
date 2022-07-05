@@ -5,8 +5,7 @@
   "MealMate" is a one stop pal that helps you to shortlist recipes as per your need.
 </p>
 
-<h2>Plan your today's meal with MealMate</h2>
-  <a href="https://meal-mate.surge.sh/"></a>
+<a href="https://meal-mate.surge.sh/">Plan your today's meal with MealMate</a>
 
 <h2>Key Freatues:</h2>
 <ul>
