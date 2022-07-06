@@ -46,7 +46,7 @@ export default function Footer() {
             <FaFacebook />
           </a>
 
-          <a href="https://tweetit-tweeter.heroku.app.com" target="blank">
+          <a href="https://tweetit-tweeter.herokuapp.com/" target="blank">
             <FaTwitter />
           </a>
 
